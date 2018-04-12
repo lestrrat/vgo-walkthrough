@@ -1,4 +1,4 @@
-package foo
+package foo // import "github.com/lestrrat/vgo-walkthrough/foo"
 
 import "errors"
 
