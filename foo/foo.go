@@ -1,7 +1,13 @@
 package foo // import "github.com/lestrrat/vgo-walkthrough/foo"
 
-import "errors"
+import (
+	"github.com/lestrrat/vgo-walkthrough/bar"
+	"github.com/pkg/errors"
+)
 
 func Main() error {
-	return errors.New(`unimplemented`)
+	if err := bar.Bar(); err != nil {
+		return errors.Wrap(err, `failed to call bar.Bar()`)
+	}
+	return nil
 }
